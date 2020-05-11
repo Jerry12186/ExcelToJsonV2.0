@@ -105,6 +105,8 @@ namespace MyExcelTool
         }
         /// <summary>
         /// 转成JSON
+        /// 这个是给提示框用的
+        /// 特点，只有两列，第一列是唯一ID
         /// </summary>
         /// <returns></returns>
         private string ToJson(string sheetName)
@@ -112,16 +114,29 @@ namespace MyExcelTool
             JObject json = new JObject();
 
             DataTable dataTable = GetExcelContent(sheetName);
-            foreach (DataRow dataRow in dataTable.Rows)
+            //以列为单位进行的操作
+            //foreach (DataRow dataRow in dataTable.Rows)
+            //{
+            //    json = new JObject();
+            //    foreach (DataColumn column in dataTable.Rows)
+            //    {
+            //        if (!string.IsNullOrEmpty(dataRow[column.ColumnName].ToString()))
+            //        {
+            //            json.Add(column.ColumnName, dataRow[column.ColumnName].ToString());
+            //        }
+            //    }
+            //}
+            for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                json = new JObject();
-                foreach (DataColumn column in dataTable.Columns)
+                string key = dataTable.Rows[i][0].ToString();
+                dynamic row = new JObject();
+                for (int j = 1; j < dataTable.Columns.Count; j++)
                 {
-                    if (!string.IsNullOrEmpty(dataRow[column.ColumnName].ToString()))
-                    {
-                        json.Add(column.ColumnName, dataRow[column.ColumnName].ToString());
-                    }
+                    var value = dataTable.Rows[i][dataTable.Columns[j].ColumnName];
+                    if (!string.IsNullOrEmpty(value.ToString()))
+                        row.Add(dataTable.Columns[j].ColumnName, value.ToString());
                 }
+                json.Add(key, row);
             }
             return json.ToString();
         }

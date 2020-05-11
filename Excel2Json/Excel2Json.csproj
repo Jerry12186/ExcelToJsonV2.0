@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVAndJson\CSV2Json.cs" />
     <Compile Include="CSVAndXml\CSV2XML.cs" />
     <Compile Include="ExcelAndJson\Excel2Json.cs" />
     <Compile Include="CSVAndXml\XML2CSV.cs" />

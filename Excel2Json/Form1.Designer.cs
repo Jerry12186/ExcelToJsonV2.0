@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Excel2JSON工具));
             this.SelectExcel = new System.Windows.Forms.Button();
             this.Tips = new System.Windows.Forms.TextBox();
-            this.SingleOrMul = new System.Windows.Forms.CheckBox();
             this.XMLOrJson = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SingleOrMul = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ExcelToXML = new System.Windows.Forms.RadioButton();
             this.XML2Excel = new System.Windows.Forms.RadioButton();
@@ -43,7 +43,7 @@
             // 
             // SelectExcel
             // 
-            this.SelectExcel.Location = new System.Drawing.Point(70, 37);
+            this.SelectExcel.Location = new System.Drawing.Point(79, 37);
             this.SelectExcel.Name = "SelectExcel";
             this.SelectExcel.Size = new System.Drawing.Size(116, 65);
             this.SelectExcel.TabIndex = 0;
@@ -61,16 +61,6 @@
             this.Tips.Size = new System.Drawing.Size(593, 284);
             this.Tips.TabIndex = 2;
             // 
-            // SingleOrMul
-            // 
-            this.SingleOrMul.AutoSize = true;
-            this.SingleOrMul.Location = new System.Drawing.Point(70, 131);
-            this.SingleOrMul.Name = "SingleOrMul";
-            this.SingleOrMul.Size = new System.Drawing.Size(132, 16);
-            this.SingleOrMul.TabIndex = 3;
-            this.SingleOrMul.Text = "每个表单都生成文件";
-            this.SingleOrMul.UseVisualStyleBackColor = true;
-            // 
             // XMLOrJson
             // 
             this.XMLOrJson.Location = new System.Drawing.Point(77, 37);
@@ -83,14 +73,24 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.SelectExcel);
             this.groupBox1.Controls.Add(this.SingleOrMul);
+            this.groupBox1.Controls.Add(this.SelectExcel);
             this.groupBox1.Location = new System.Drawing.Point(27, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(273, 181);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Excel/JSON专区";
+            // 
+            // SingleOrMul
+            // 
+            this.SingleOrMul.AutoSize = true;
+            this.SingleOrMul.Location = new System.Drawing.Point(79, 131);
+            this.SingleOrMul.Name = "SingleOrMul";
+            this.SingleOrMul.Size = new System.Drawing.Size(132, 16);
+            this.SingleOrMul.TabIndex = 1;
+            this.SingleOrMul.Text = "每个表单都生成Json";
+            this.SingleOrMul.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -153,12 +153,12 @@
 
         private System.Windows.Forms.Button SelectExcel;
         private System.Windows.Forms.TextBox Tips;
-        private System.Windows.Forms.CheckBox SingleOrMul;
         private System.Windows.Forms.Button XMLOrJson;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton XML2Excel;
         private System.Windows.Forms.RadioButton ExcelToXML;
+        private System.Windows.Forms.CheckBox SingleOrMul;
     }
 }
 

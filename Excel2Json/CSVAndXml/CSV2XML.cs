@@ -11,7 +11,6 @@ namespace Excel2Json.CSVAndXml
 {
     class CSV2XML
     {
-        bool bStart = false;
         /// <summary>
         /// 写入xml文件
         /// </summary>
